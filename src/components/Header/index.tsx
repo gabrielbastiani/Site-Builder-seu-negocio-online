@@ -70,32 +70,32 @@ export default function Header() {
             <nav className="hidden md:block mr-4 lg:mr-[50px] xl:mr-[100px] 2xl:mr-[180px]">
                 <ul className="flex list-none gap-2 xl:gap-4 2xl:gap-6">
                     <li className="relative group hover:border-b-3 border-orange-500">
-                        <a href="/" className="text-white px-2 py-1 xl:px-2.5 xl:py-1.5 hover:text-orange-500 text-sm xl:text-base">
+                        <Link href="/" className="text-white px-2 py-1 xl:px-2.5 xl:py-1.5 hover:text-orange-500 text-sm xl:text-base">
                             Inicio
-                        </a>
+                        </Link>
                     </li>
 
                     {menuItems.map((item, i) => (
                         <li key={i} className="relative group hover:border-b-3 border-orange-500">
                             {item.href ? (
-                                <a href={item.href} className="text-white px-2 py-1 xl:px-2.5 xl:py-1.5 hover:text-orange-500 text-sm xl:text-base">
+                                <Link href={item.href} className="text-white px-2 py-1 xl:px-2.5 xl:py-1.5 hover:text-orange-500 text-sm xl:text-base">
                                     {item.title}
-                                </a>
+                                </Link>
                             ) : (
                                 <>
-                                    <a href="#" className="text-white px-2 py-1 xl:px-2.5 xl:py-1.5 hover:text-orange-500 text-sm xl:text-base">
+                                    <Link href="#" className="text-white px-2 py-1 xl:px-2.5 xl:py-1.5 hover:text-orange-500 text-sm xl:text-base">
                                         {item.title}
-                                    </a>
+                                    </Link>
                                     <ul className="absolute hidden group-hover:block top-6 left-0 bg-black min-w-[200px] xl:min-w-[300px] shadow-lg border border-orange-500">
                                         {item.subItems?.map((subItem, j) => (
                                             <li key={j} className="w-full border-b last:border-b-0 border-gray-800">
-                                                <a
+                                                <Link
                                                     href={subItem.href}
                                                     className="block px-3 py-2 xl:px-5 xl:py-4 text-white hover:text-orange-500 hover:bg-black/80 transition-all group/subitem relative text-sm xl:text-base"
                                                 >
                                                     <span className="absolute left-0 top-0 h-full w-1 bg-orange-500 opacity-0 group-hover/subitem:opacity-100 transition-opacity"></span>
                                                     {subItem.text}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -121,17 +121,17 @@ export default function Header() {
                     <nav>
                         <ul className="flex flex-col space-y-2 px-2 sm:px-4">
                             <li className="text-center py-2">
-                                <a href="/" className="text-white hover:text-orange-500 text-lg">
+                                <Link href="/" className="text-white hover:text-orange-500 text-lg">
                                     Inicio
-                                </a>
+                                </Link>
                             </li>
 
                             {menuItems.map((item, i) => (
                                 <li key={i} className="group py-2">
                                     {item.href ? (
-                                        <a href={item.href} className="block text-white hover:text-orange-500 py-2 px-4 text-lg">
+                                        <Link href={item.href} className="block text-white hover:text-orange-500 py-2 px-4 text-lg">
                                             {item.title}
-                                        </a>
+                                        </Link>
                                     ) : (
                                         <>
                                             <details className="group">
@@ -142,13 +142,13 @@ export default function Header() {
                                                 <ul className="mt-2 ml-4 bg-black/80 border-l-2 border-orange-500">
                                                     {item.subItems?.map((subItem, j) => (
                                                         <li key={j} className="py-1 border-b last:border-b-0 border-gray-800">
-                                                            <a
+                                                            <Link
                                                                 href={subItem.href}
                                                                 className="block text-white hover:text-orange-500 px-4 py-3 whitespace-normal text-base relative hover:bg-black/60 transition-colors"
                                                             >
                                                                 <span className="absolute left-0 top-0 h-full w-1 bg-orange-500 opacity-0 hover:opacity-100 transition-opacity"></span>
                                                                 {subItem.text}
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                     ))}
                                                 </ul>
